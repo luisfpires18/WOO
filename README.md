@@ -1,1 +1,4 @@
-# WOO
+Weapons of Order
+
+Branches:
+WOO/

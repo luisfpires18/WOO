@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WOO.Data\WOO.Data.csproj" />
+    <ProjectReference Include="..\WOO.Domain.Model\WOO.Domain.Model.csproj" />
+    <ProjectReference Include="..\WOO.Infrastructure.Crosscutting\WOO.Infrastructure.Crosscutting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Mappers\Enums\Interfaces\" />
+  </ItemGroup>
+
+</Project>
