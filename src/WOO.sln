@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WOO.Data.Repository", "WOO.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOO.Application.Kafka", "WOO.Application.Kafka\WOO.Application.Kafka.csproj", "{748C4568-7BF3-4CF3-815A-BF8FFA5A8BFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOO.Console", "WOO.Console\WOO.Console.csproj", "{4F5A7881-B1F7-4401-A9BA-B0DC2B28D8B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{748C4568-7BF3-4CF3-815A-BF8FFA5A8BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{748C4568-7BF3-4CF3-815A-BF8FFA5A8BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{748C4568-7BF3-4CF3-815A-BF8FFA5A8BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5A7881-B1F7-4401-A9BA-B0DC2B28D8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5A7881-B1F7-4401-A9BA-B0DC2B28D8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5A7881-B1F7-4401-A9BA-B0DC2B28D8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5A7881-B1F7-4401-A9BA-B0DC2B28D8B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{0036D78F-0DF2-4C79-AA63-2342FEA17A58} = {66A16B1F-EC95-4A57-A123-825D776B9E9E}
 		{CA925168-C5B9-4E83-9DBA-2B036D76020F} = {6CC8C848-7F84-436D-A031-10E0CB88A8C2}
 		{748C4568-7BF3-4CF3-815A-BF8FFA5A8BFF} = {B3980767-BC69-4C2E-853F-1752E1782657}
+		{4F5A7881-B1F7-4401-A9BA-B0DC2B28D8B0} = {D3AE103C-A61D-4C24-AD03-950893F8F8DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {21D4584D-EE60-4A64-99EE-4C3F92F84D0D}
