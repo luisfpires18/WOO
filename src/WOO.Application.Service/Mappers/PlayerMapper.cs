@@ -15,6 +15,8 @@
 
             var result = new Domain.Player
             {
+                Username = source.Username,
+                Id = source.PlayerId,
             };
 
             return result;

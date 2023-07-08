@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
     using WOO.Data.Repository.Contexts;
+    using WOO.Data.Repository.Model;
 
     public static class DbInitializer
     {
@@ -28,6 +29,22 @@
                 //        NormalizedName = UserRoles.MEMBER,
                 //    });
                 //}
+
+                if (!context.Players.Any())
+                {
+                    var player = fixture
+                        .Build<Player>()
+                        .Without(player => player.PlayerId)
+                        .With(player => player.Username, "luisfpires")
+                        .Create();
+
+                    var players = new List<Player>
+                    {
+                        player,
+                    };
+
+                    context.Players.AddRange(players);
+                }
 
                 context.SaveChanges();
             }

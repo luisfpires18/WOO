@@ -7,39 +7,39 @@
 
     public class PlayerService : IPlayerService
     {
-        private readonly IPlayerRepository eventRepository;
+        private readonly IPlayerRepository playerRepository;
 
-        private readonly IPlayerMapper eventMapper;
+        private readonly IPlayerMapper playerMapper;
 
-        public PlayerService(IPlayerRepository eventRepository, IPlayerMapper eventMapper)
+        public PlayerService(IPlayerRepository playerRepository, IPlayerMapper eventMapper)
         {
-            this.eventRepository = eventRepository;
-            this.eventMapper = eventMapper;
+            this.playerRepository = playerRepository;
+            this.playerMapper = eventMapper;
         }
 
         public IEnumerable<Player> GetAll()
         {
-            var eventList = this.eventRepository.GetAll();
+            var playerList = this.playerRepository.GetAll();
 
-            var result = this.eventMapper.Map(eventList);
+            var result = this.playerMapper.Map(playerList);
 
             return result;
         }
 
         public Player? GetPlayerById(int id)
         {
-            var @event = this.eventRepository.GetPlayerById(id);
+            var @event = this.playerRepository.GetPlayerById(id);
 
-            var result = this.eventMapper.Map(@event);
+            var result = this.playerMapper.Map(@event);
 
             return result;
         }
 
         public IEnumerable<Player> SearchPlayers(string searchQuery)
         {
-            var eventList = this.eventRepository.SearchPlayers(searchQuery);
+            var eventList = this.playerRepository.SearchPlayers(searchQuery);
 
-            var result = this.eventMapper.Map(eventList);
+            var result = this.playerMapper.Map(eventList);
 
             return result;
         }

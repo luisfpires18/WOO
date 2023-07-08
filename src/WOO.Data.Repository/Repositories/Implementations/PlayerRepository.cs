@@ -15,22 +15,22 @@
 
         public Player? GetPlayerById(int id)
         {
-            if (wooDBContext.Players == null)
+            if (this.wooDBContext.Players == null)
             {
                 return null;
             }
 
-            return wooDBContext.Players.First(e => e.PlayerId == id);
+            return this.wooDBContext.Players.First(e => e.PlayerId == id);
         }
 
         public IEnumerable<Player> GetAll()
         {
-            return wooDBContext.Players;
+            return this.wooDBContext.Players;
         }
 
         public IEnumerable<Player> SearchPlayers(string searchQuery)
         {
-            return wooDBContext.Players.Where(p => p.Username.Contains(searchQuery));
+            return this.wooDBContext.Players.Where(p => p.Username.Contains(searchQuery));
         }
     }
 }

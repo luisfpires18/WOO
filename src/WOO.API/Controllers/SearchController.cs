@@ -8,17 +8,17 @@
     [ApiController]
     public class PlayerController : ControllerBase
     {
-        private readonly IPlayerService eventService;
+        private readonly IPlayerService playerService;
 
         public PlayerController(IPlayerService eventService)
         {
-            this.eventService = eventService;
+            this.playerService = eventService;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var events = this.eventService.GetAll();
+            var events = this.playerService.GetAll();
 
             return Ok(events);
         }
@@ -26,7 +26,7 @@
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var e = this.eventService.GetPlayerById(id);
+            var e = this.playerService.GetPlayerById(id);
 
             if (e == null)
             {
@@ -43,7 +43,7 @@
 
             if (!string.IsNullOrEmpty(searchQuery))
             {
-                events = this.eventService.SearchPlayers(searchQuery);
+                events = this.playerService.SearchPlayers(searchQuery);
             }
 
             return new JsonResult(events);
