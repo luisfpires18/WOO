@@ -1,8 +1,8 @@
-﻿namespace WOO.Data.Contexts
+﻿namespace WOO.Data.Repository.Contexts
 {
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using WOO.Data.Model;
+    using WOO.Data.Repository.Model;
 
     public class WooDBContext : IdentityDbContext
     {

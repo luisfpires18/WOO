@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WOO.Data\WOO.Data.csproj" />
+    <ProjectReference Include="..\WOO.Data.Repository\WOO.Data.Repository.csproj" />
     <ProjectReference Include="..\WOO.Domain.Model\WOO.Domain.Model.csproj" />
     <ProjectReference Include="..\WOO.Infrastructure.Crosscutting\WOO.Infrastructure.Crosscutting.csproj" />
   </ItemGroup>

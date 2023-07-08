@@ -7,9 +7,9 @@
     using WOO.Application.Service;
     using WOO.Application.Service.Mappers;
     using WOO.Application.Service.Mappers.Interfaces;
-    using WOO.Data.Contexts;
-    using WOO.Data.Repositories.Implementations;
-    using WOO.Data.Repositories.Interfaces;
+    using WOO.Data.Repository.Contexts;
+    using WOO.Data.Repository.Implementations;
+    using WOO.Data.Repository.Interfaces;
 
     public static class DIRegistration
     {

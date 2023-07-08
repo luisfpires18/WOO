@@ -1,6 +1,6 @@
-﻿namespace WOO.Data.Repositories.Interfaces
+﻿namespace WOO.Data.Repository.Interfaces
 {
-    using WOO.Data.Model;
+    using WOO.Data.Repository.Model;
 
     public interface IPlayerRepository
     {

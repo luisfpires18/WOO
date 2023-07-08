@@ -1,8 +1,9 @@
-﻿namespace WOO.Data.Model
+﻿namespace WOO.Data.Repository.Model
 {
-    public class Player
+    public class Player : BaseEntity
     {
         public int PlayerId { get; set; }
+
         public string Username { get; set; } = string.Empty;
     }
 }

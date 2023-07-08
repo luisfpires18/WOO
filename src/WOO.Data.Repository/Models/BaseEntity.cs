@@ -1,10 +1,13 @@
-﻿namespace WOO.Data.Model
+﻿namespace WOO.Data.Repository.Model
 {
     public class BaseEntity
     {
         public DateTime CreatedAt { get; set; }
+
         public string CreatedBy { get; set; }
+
         public DateTime ModifiedAt { get; set; }
+
         public string ModifiedBy { get; set; }
     }
 }

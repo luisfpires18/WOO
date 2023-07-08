@@ -1,9 +1,8 @@
-﻿namespace WOO.Data.Repositories.Implementations
+﻿namespace WOO.Data.Repository.Implementations
 {
-    using Microsoft.EntityFrameworkCore;
-    using WOO.Data.Contexts;
-    using WOO.Data.Model;
-    using WOO.Data.Repositories.Interfaces;
+    using WOO.Data.Repository.Contexts;
+    using WOO.Data.Repository.Interfaces;
+    using WOO.Data.Repository.Model;
 
     public class PlayerRepository : IPlayerRepository
     {
