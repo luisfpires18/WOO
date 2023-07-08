@@ -1,4 +1,4 @@
-﻿namespace WOO.Data.Model.Enums
+﻿namespace WOO.Data.Repository.Model.Enums
 {
     public enum SkillType
     {

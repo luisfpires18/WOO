@@ -3,7 +3,7 @@
     using AutoFixture;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
-    using WOO.Data.Contexts;
+    using WOO.Data.Repository.Contexts;
 
     public static class DbInitializer
     {

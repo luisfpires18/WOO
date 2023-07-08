@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WOO.Data.Model
+﻿namespace WOO.Data.Repository.Model
 {
+    using WOO.Data.Repository.Model.Enums;
+
     public class Skill
     {
         public Guid SkillId { get; set; }

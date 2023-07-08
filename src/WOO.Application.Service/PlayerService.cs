@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using WOO.Application.Service.Mappers.Interfaces;
-    using WOO.Data.Repositories.Interfaces;
+    using WOO.Data.Repository.Interfaces;
     using WOO.Domain.Model;
 
     public class PlayerService : IPlayerService

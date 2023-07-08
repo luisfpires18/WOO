@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WOO.Data.Model
+namespace WOO.Data.Repository.Model
 {
     public class Weapon
     {

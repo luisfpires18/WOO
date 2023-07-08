@@ -1,7 +1,7 @@
 ﻿namespace WOO.Application.Service.Mappers
 {
     using WOO.Application.Service.Mappers.Interfaces;
-    using Data = WOO.Data.Model;
+    using Data = WOO.Data.Repository.Model;
     using Domain = WOO.Domain.Model;
 
     public class PlayerMapper : IPlayerMapper

@@ -1,4 +1,4 @@
-﻿namespace WOO.Data.Model
+﻿namespace WOO.Data.Repository.Model
 {
     public class WeaponType
     {

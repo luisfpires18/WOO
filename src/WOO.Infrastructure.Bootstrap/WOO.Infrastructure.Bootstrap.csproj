@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WOO.Application.Service\WOO.Application.Service.csproj" />
-    <ProjectReference Include="..\WOO.Data\WOO.Data.csproj" />
+    <ProjectReference Include="..\WOO.Data.Repository\WOO.Data.Repository.csproj" />
   </ItemGroup>
 
 </Project>
