@@ -5,7 +5,7 @@
 
     public class RenameFilter : IFilter<PlayerInput>
     {
-        public PlayerInput Execute(PlayerInput input)
+        public PlayerInput ExecuteAsync(PlayerInput input)
         {
             input.Name = input.Name.ToUpper();
             input.Score += 10;

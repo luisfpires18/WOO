@@ -25,7 +25,7 @@
 
             foreach (var filter in filters)
             {
-                result = filter.Execute(result);
+                result = filter.ExecuteAsync(result);
             }
 
             return result;

@@ -16,4 +16,10 @@
     <Folder Include="Mappers\Enums\Interfaces\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CassandraCSharpDriver" Version="3.19.2" />
+    <PackageReference Include="Confluent.Kafka" Version="2.1.1" />
+    <PackageReference Include="NEST" Version="7.17.5" />
+  </ItemGroup>
+
 </Project>

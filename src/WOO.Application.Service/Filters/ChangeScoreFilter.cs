@@ -5,7 +5,7 @@
 
     public class ChangeScoreFilter : IFilter<PlayerInput>
     {
-        public PlayerInput Execute(PlayerInput input)
+        public PlayerInput ExecuteAsync(PlayerInput input)
         {
             input.Score *= 2;
             return input;

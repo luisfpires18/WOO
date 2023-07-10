@@ -19,7 +19,10 @@
             var pipeline = new PlayerPipeline<PlayerInput>();
 
             pipeline.AddFilter<RenameFilter>()
-                    .AddFilter<ChangeScoreFilter>();
+                    .AddFilter<ChangeScoreFilter>()
+                    //.AddFilter<WriteIntoElasticsearchFilter>()
+                    .AddFilter<WriteIntoCassandraFilter>()
+                    .AddFilter<ProduceEventFilter>();
 
             // Execute the pipeline
             PlayerInput output = pipeline.Execute(input);
