@@ -1,53 +1,33 @@
 ﻿namespace WOO.Application.Service.Filters
 {
     using System;
+    using System.Threading.Tasks;
+    using Avro;
+    using Avro.File;
+    using Avro.Generic;
     using Cassandra;
     using Confluent.Kafka;
+    using woo.player;
+    using WOO.Application.Kafka;
+    using WOO.Application.Kafka.Compression;
     using WOO.Application.Service.Pipelines.Interfaces;
     using WOO.Domain.Model.Inputs;
 
     public class ProduceEventFilter : IFilter<PlayerInput>
     {
-        public PlayerInput ExecuteAsync(PlayerInput input)
+        public async Task<PlayerInput> ExecuteAsync(PlayerInput input)
         {
-            // Kafka topic to produce to
-            string topic = "dev.player";
+            var producer = new AvroProducer(AlgorithmEnum.ZStandard);
 
-            // Kafka producer configuration
-            var config = new ProducerConfig
+            var player = new Player
             {
-                BootstrapServers = "localhost:9092"
+                id = input.Id.ToString(),
+                name = input.Name,
+                score = input.Score,
             };
 
-            // Create a Kafka producer
-            using (var producer = new ProducerBuilder<string, PlayerInput>(config).Build())
-            {
-                try
-                {
-                    // Produce a Kafka event
-                    var message = new Message<string, PlayerInput>
-                    {
-                        Key = input.Id.ToString(),
-                        Value = input
-                    };
+            await producer.ProduceAsync(player, 12);
 
-                    var deliveryReport = producer.ProduceAsync(topic, message).GetAwaiter().GetResult();
-
-                    // Check if the event was successfully produced
-                    if (deliveryReport.Status == PersistenceStatus.Persisted)
-                    {
-                        Console.WriteLine("Event produced successfully!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Failed to produce event");
-                    }
-                }
-                catch (ProduceException<string, PlayerInput> ex)
-                {
-                    Console.WriteLine($"Error producing event: {ex.Error.Reason}");
-                }
-            }
 
             return input;
         }

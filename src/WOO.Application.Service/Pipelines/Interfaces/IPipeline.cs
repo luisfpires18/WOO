@@ -5,7 +5,5 @@
     public interface IPipeline<T>
     {
         Pipeline<T> AddFilter<TFilter>() where TFilter : IFilter<T>, new ();
-
-        T Execute(T input);
     }
 }

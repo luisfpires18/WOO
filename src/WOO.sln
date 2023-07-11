@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WOO.Infrastructure.Bootstra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F534E4B-52CF-4B5F-A73D-7D1CA937609E}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose.yaml = docker-compose.yaml
+		..\docker-compose.yaml = ..\docker-compose.yaml
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject

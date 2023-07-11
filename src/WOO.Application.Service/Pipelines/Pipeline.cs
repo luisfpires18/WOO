@@ -19,13 +19,13 @@
             return this;
         }
 
-        public T Execute(T input)
+        public async Task<T> ExecuteAsync(T input)
         {
             T result = input;
 
             foreach (var filter in filters)
             {
-                result = filter.ExecuteAsync(result);
+                result = await filter.ExecuteAsync(result);
             }
 
             return result;

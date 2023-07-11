@@ -1,13 +1,14 @@
 ﻿namespace WOO.Application.Service.Filters
 {
     using System;
+    using System.Threading.Tasks;
     using Cassandra;
     using WOO.Application.Service.Pipelines.Interfaces;
     using WOO.Domain.Model.Inputs;
 
     public class WriteIntoCassandraFilter : IFilter<PlayerInput>
     {
-        public PlayerInput ExecuteAsync(PlayerInput input)
+        public Task<PlayerInput> ExecuteAsync(PlayerInput input)
         {
             // Connect to Cassandra
             var cluster = Cluster.Builder()
@@ -21,10 +22,10 @@
             string replicationStrategy = "SimpleStrategy";
             int replicationFactor = 1;
 
-            //string createKeyspaceQuery = $"CREATE KEYSPACE IF NOT EXISTS {keyspaceName} WITH REPLICATION = {{ 'class' : '{replicationStrategy}', 'replication_factor' : {replicationFactor} }}";
-            //session.Execute(createKeyspaceQuery);
+            string createKeyspaceQuery = $"CREATE KEYSPACE IF NOT EXISTS {keyspaceName} WITH REPLICATION = {{ 'class' : '{replicationStrategy}', 'replication_factor' : {replicationFactor} }}";
+            session.Execute(createKeyspaceQuery);
 
-            //Console.WriteLine("Keyspace created successfully!");
+            Console.WriteLine("Keyspace created successfully!");
 
             session = cluster.Connect(keyspaceName); // Replace "mykeyspace" with your keyspace name
 
@@ -45,7 +46,7 @@
             session.Dispose();
             cluster.Dispose();
 
-            return input;
+            return Task.FromResult(input);
         }
     }
 }

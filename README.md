@@ -1,4 +1,1 @@
-Weapons of Order
-
-Branches:
-WOO/
+avrogen -s player.avsc .

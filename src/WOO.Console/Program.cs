@@ -1,13 +1,14 @@
 ﻿namespace PipelineExample
 {
     using System;
+    using System.Threading.Tasks;
     using WOO.Application.Service.Filters;
     using WOO.Application.Service.Pipelines;
     using WOO.Domain.Model.Inputs;
 
     internal class Program
     {
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
             // Input data
             var input = new PlayerInput { Name = "Luís Pires", Score = 100 };
@@ -20,12 +21,12 @@
 
             pipeline.AddFilter<RenameFilter>()
                     .AddFilter<ChangeScoreFilter>()
-                    //.AddFilter<WriteIntoElasticsearchFilter>()
+                    .AddFilter<WriteIntoElasticsearchFilter>()
                     .AddFilter<WriteIntoCassandraFilter>()
                     .AddFilter<ProduceEventFilter>();
 
             // Execute the pipeline
-            PlayerInput output = pipeline.Execute(input);
+            PlayerInput output = await pipeline.ExecuteAsync(input);
 
             // Output the result
             Console.WriteLine("Output: " + output.ToString());

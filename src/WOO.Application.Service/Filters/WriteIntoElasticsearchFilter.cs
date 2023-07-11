@@ -9,7 +9,7 @@
 
     public class WriteIntoElasticsearchFilter : IFilter<PlayerInput>
     {
-        public PlayerInput ExecuteAsync(PlayerInput input)
+        public Task<PlayerInput> ExecuteAsync(PlayerInput input)
         {
             var settings = new ConnectionSettings(new Uri("http://localhost:9200"))
                 .DefaultIndex("myindex"); // Replace "myindex" with your desired index name
@@ -27,7 +27,7 @@
                 Console.WriteLine($"Failed to index object: {indexResponse.ServerError?.Error}");
             }
 
-            return input;
+            return Task.FromResult(input);
         }
     }
 }

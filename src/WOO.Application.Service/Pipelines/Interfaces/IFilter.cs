@@ -2,6 +2,6 @@
 {
     public interface IFilter<T>
     {
-        T ExecuteAsync(T input);
+        Task<T> ExecuteAsync(T input);
     }
 }

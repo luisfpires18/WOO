@@ -1,14 +1,15 @@
 ﻿namespace WOO.Application.Service.Filters
 {
+    using System.Threading.Tasks;
     using WOO.Application.Service.Pipelines.Interfaces;
     using WOO.Domain.Model.Inputs;
 
     public class ChangeScoreFilter : IFilter<PlayerInput>
     {
-        public PlayerInput ExecuteAsync(PlayerInput input)
+        public Task<PlayerInput> ExecuteAsync(PlayerInput input)
         {
             input.Score *= 2;
-            return input;
+            return Task.FromResult(input);
         }
     }
 }
